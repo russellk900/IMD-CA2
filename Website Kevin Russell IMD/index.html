@@ -19,6 +19,11 @@
         text-emphasis-color: white
 }
 
+  .txt {
+        color: white;
+        background-color: black;
+		}
+  
 
 
 </body>
@@ -200,6 +205,39 @@ blockquote2
 				</blockquote>
         
 
+  <p>Current Time.</p>		
+<html>
+<head>
+<script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+</head>
+
+<body onload="startTime()">
+
+<div id="txt"></div>
+
+</body>
+</html>
+
+
+		
+		
+		
     <blockquote2>
     
      <p class="profile-description"  > 
@@ -257,12 +295,12 @@ blockquote2
 <style>
 /* unvisited link */
 a:link {
-    color: blue;
+    color: white;
 }
 
 /* visited link */
 a:visited {
-    color: blue;
+    color: white;
 }
 
 /* mouse over link */
